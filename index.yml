@@ -7,12 +7,22 @@ contacts:
   - displayName: bigteacher3
     pictureUrl: https://avatars.githubusercontent.com/u/211699319?v=4
     homePageUrl: https://github.com/bigteacher3
+files:
+  - path: course1/unit1/lesson1/lessonpart1/index.html
+    content: >-
+      <!DOCTYPE html>
+
+      <html lang = uk>
+
+      <head>
+          <title>Проба взаємодії VSCode for Education із GitHub</title>
+      </head>
+
+      <body>
+          <h1>Привіт!</h1>
+          <img src="https://incubator.ucf.edu/what-is-artificial-intelligence-ai-and-why-people-should-learn-about-it/" alt="Зображення, знайдене за пошуковим запитом про штучний інтелект">
+      </body>
+
+      </html>
 units:
-  - id: unit1
-    title: Unit 1
-    lessons:
-      - id: lesson1
-        title: Lesson 1
-        lessonParts:
-          - id: lessonpart1
-            title: Page 1
+  - unit1/index.yml
