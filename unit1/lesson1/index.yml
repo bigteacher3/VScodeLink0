@@ -3,3 +3,4 @@ id: lesson1
 title: Заняття 1
 lessonParts:
   - lessonpart1.yml
+  - lessonpart2.yml
