@@ -1,16 +1,8 @@
 # yaml-language-server: $schema=https://vscodeedu.com/assets/schema/course-v2.schema.json
 id: lesson1
 title: Заняття 1. Про вебсторінки та вебсайти, як воно працює
-description: "Вступ до вебжизайну: розмітка сторінки, гіперпокликання, дизайн
-  зовнішнього вигляду за допомогою аркушів каскадних стилів"
-standards:
-  - csta-student:2-da-07
-  - csta-student:2-ap-15
-  - csta-student:2-ap-13
-  - csta-student:2-ap-16
-  - csta-student:2-ic-23
-  - csta-student:2-cs-03
-  - csta-student:2-cs-01
+description: "Вступ до вебдизайну: Вебсторінки, вебсайти, вебдокумент як текст
+  із вказівками розмітки, структура ебдокументу"
 lessonParts:
   - lessonpart1.yml
   - lessonpart2.yml
