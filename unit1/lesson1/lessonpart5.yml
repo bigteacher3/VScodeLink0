@@ -188,6 +188,7 @@ questionGroups:
         options:
           - id: "1"
             value: \<title\>Головна\</title\>
+            explanation: Підпис на вкладці браузера визначає тег \<title\>
             isCorrect: true
   - id: "5"
     questions:
