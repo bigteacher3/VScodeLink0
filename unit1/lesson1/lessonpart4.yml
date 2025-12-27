@@ -5,6 +5,5 @@ content: |
   ## Перша спроба
 
   Отже, ми вже розуміємо, що основою будь-якого вебпроєкту є html-файли. 
-showEditor: true
 editors:
   - course1/unit1/lesson1/lessonpart4/index.html
