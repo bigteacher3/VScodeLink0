@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://vscodeedu.com/assets/schema/course-v2.schema.json
+id: lessonpart4
+title: Основа вебпроєкту - html файли. Що в них має бути?
+content: |
+  ##
+showEditor: true
+editors:
+  - course1/unit1/lesson1/lessonpart4/index.html
