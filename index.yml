@@ -10,5 +10,17 @@ contacts:
 files:
   - path: course1/unit1/lesson1/lessonpart4/index.html
     content: Привіт, світе!
+  - path: course1/unit1/lesson1/lessonpart5/index.html
+    content: |-
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Назва моєї сторінки</title>
+        </head>
+        <body>
+          <h1>Вітаю у 8-му класі!</h1>
+          <p>Це мій перший вебпроєкт.</p>
+        </body>
+      </html>
 units:
   - unit1/index.yml
