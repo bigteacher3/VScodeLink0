@@ -22,5 +22,21 @@ files:
           <p>Це мій перший вебпроєкт.</p>
         </body>
       </html>
+  - path: course1/unit1/lesson2/lessonpart3/gallery.html
+    content: |-
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Галерея</title>
+      </head>
+      <body>
+          <h1>Моя галерея</h1>
+          <p>Ось картинка з котиком:</p>
+          <img src="https://bigteacher3.github.io/img/kat1.jpg" 
+              alt="Кіт у чоботях">
+      </body>
+      </html>
 units:
   - unit1/index.yml
