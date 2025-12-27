@@ -13,9 +13,9 @@ files:
   - path: course1/unit1/lesson1/lessonpart5/index.html
     content: |-
       <!DOCTYPE html>
-      <html>
+      <html lang="uk">
         <head>
-          <title>Назва моєї сторінки</title>
+          <title>Головна</title>
         </head>
         <body>
           <h1>Вітаю у 8-му класі!</h1>

@@ -1,80 +1,49 @@
 # yaml-language-server: $schema=https://vscodeedu.com/assets/schema/course-v2.schema.json
 id: lessonpart5
 title: Структура HTML-документу
-content: >
-  Чудово! Тепер, коли ми знаємо, що html-файл має бути оформленим відповідно до
-  певних правил, настав час розібратися, як саме він будується.
+content: |
+  Чудово! Тепер, коли ми знаємо, що html-файл має бути оформленим відповідно до певних правил, настав час розібратися, як саме він будується.
 
-
-  В HTML усе тримається на **тегах**. Уявіть, що теги — це спеціальні
-  команди-дужки, які кажуть браузеру: «Ось тут починається заголовок, а ось тут
-  він закінчується».
-
+  В HTML усе тримається на **тегах**. Уявіть, що теги — це спеціальні команди-дужки, які кажуть браузеру: «Ось тут починається заголовок, а ось тут він закінчується».
 
   ***
 
+  ## 1. Що таке теги?
 
-  ### 1. Що таке теги?
-
-
-  Отже, теги - це вказівки браузеру яким чином сприймати та розміщувати ті чи
-  інші елементи вебсторінки.
-
+  Отже, теги - це вказівки браузеру яким чином сприймати та розміщувати ті чи інші елементи вебсторінки.
 
   Більшість тегів є **парними**. Вони працюють як контейнери:
 
-
   * `<tag>` — відкривальний тег (початок команди).
-
-  * `</tag>` — закривальний тег (зверніть увагу на косу риску `/`, вона означає
-  кінець).
-
+  * `</tag>` — закривальний тег (зверніть увагу на косу риску `/`, вона означає кінець).
 
   Все, що знаходиться всередині, отримує властивості цього тега. Наприклад:
 
-
   ```
-
   <b>Цей текст буде жирним</b>
-
   ```
 
-
-  Проте є й одинарні теги. Усі параметри відтворення елементу, що визначений
-  таким тегом, описуються через значення атрибутів всередині самого тегу.
-
+  Проте є й одинарні теги. Усі параметри відтворення елементу, що визначений таким тегом, описуються через значення атрибутів всередині самого тегу.
 
   Наприклад:
 
-
   ```
-
   <img src = "img/smile.png" alt = "Смайлик" />
-
   ```
-
 
   ***
 
+  ## 2. Класична структура HTML-документа
 
-  ### 2. Класична структура HTML-документа
-
-
-  Кожна вебсторінка — це не просто хаотичний набір тегів. Вона має чітку
-  ієрархію, схожу на офіційний лист або анкету.
-
+  Кожна вебсторінка — це не просто хаотичний набір тегів. Вона має чітку ієрархію, схожу на офіційний лист або анкету.
 
   Ось стандартний «шаблон», який є в основі будь-якого сайту у світі:
 
-
   HTML
 
-
   ```
-
   <!DOCTYPE html>
-
-  <html>
+  <html lang = "uk">
     <head>
       <title>Назва моєї сторінки</title>
     </head>
@@ -84,57 +53,201 @@ content: >
     </body>
   </html>
 
-
   ```
 
+  ***
+
+  ## 3. Розбираємо «деталі конструктора»:
+
+  * **`<!DOCTYPE html>`** — це вигук: «Гей, браузесе, я розмовляю сучасною мовою HTML5!». Це технічний рядок, який завжди стоїть першим.
+  * **`<html> ... </html>`** — головний контейнер. Усе, що стосується сайту, живе всередині нього. Атрибут lang = "uk", що визначений усередині відкриваючого тегу html, вказує браузеру, що основна мова контенту цієї вебсторінки - українська.
+  * **`<head>`** **(Голова)** — тут зберігається «службова» інформація. Її не видно на самій сторінці, але вона важлива. Наприклад, тут лежить тег `<title>`, який підписує вкладку у вашому браузері.
+  * **`<body>`** **(Тіло)** — це серце вашого сайту. Усе, що ви напишете тут (текст, картинки, кнопки), користувач побачить на екрані.
+
+  > **Важливе правило:** Теги не можуть перетинатися як попало. Вони вкладаються один в одного.
+  >
+  > Найкраща аналогія для розуміння — це **коробки з подарунками або посилками**.
+  >
+  > ***
+  >
+  > ### Принцип "Коробка в коробці" 📦
+  >
+  > Уявіть, що ви замовили складний подарунок. Ви відкриваєте велику поштову коробку, всередині неї лежить гарна подарункова коробка, а вже в ній — маленька коробочка з самим гаджетом.
+  >
+  > Головне правило вкладеності:
+  >
+  > Ви не можете закрити зовнішню коробку, доки не закрили внутрішню.
+  >
+  > Як це працює в коді:
+  >
+  > Якщо ми покладемо "жирний" текст всередину абзацу, це виглядатиме так:
+  >
+  > 1. Відкриваємо коробку-абзац: `<p>`
+  > 2. Відкриваємо коробку-акцент: `<b>`
+  > 3. Кладемо текст: `Привіт, друзі!`
+  > 4. Спершу закриваємо меншу коробку: `</b>`
+  > 5. І тільки потім закриваємо велику коробку: `</p>`
+  >
+  > ***
+  >
+  > ### Чому це важливо?
+  >
+  > В IT-світі це називається **ієрархією** або **деревом тегів**.
+  >
+  > * Тег, що зовні, — це **батьківський** елемент.
+  > * Тег, що всередині, — це **дочірній** елемент (дитина).
+  >
+  > Браузер читає ваш код, як інструкцію з розпакування: він має чітко розуміти, де закінчується одна "коробка" і починається інша. Якщо ви переплутаєте черговість закриття тегів, ваш дизайн може "розсипатися", як погано складена вежа.
 
   ***
 
-
-  ### 3. Розбираємо «деталі конструктора»:
-
-
-  * **`<!DOCTYPE html>`** — це вигук: «Гей, браузесе, я розмовляю сучасною мовою
-  HTML5!». Це технічний рядок, який завжди стоїть першим.
-
-  * **`<html> ... </html>`** — головний контейнер. Усе, що стосується сайту,
-  живе всередині нього.
-
-  * **`<head>`** **(Голова)** — тут зберігається «службова» інформація. Її не
-  видно на самій сторінці, але вона важлива. Наприклад, тут лежить тег
-  `<title>`, який підписує вкладку у вашому браузері.
-
-  * **`<body>`** **(Тіло)** — це серце вашого сайту. Усе, що ви напишете тут
-  (текст, картинки, кнопки), користувач побачить на екрані.
-
-
-  > **Важливе правило:** Теги не можуть перетинатися як попало. Вони вкладаються
-  один в одного, як матрійка. Якщо ви останнім відкрили тег `<b>`, то його треба
-  закрити першим.
-
-
-  ***
-
-
-  ### Головні теги, які вам знадобляться сьогодні:
-
+  ## Головні теги, які вам знадобляться сьогодні:
 
   1. **`<h1>`** **—** **`<h6>`** — заголовки (від найбільшого до найменшого).
-
   2. **`<p>`** — звичайний абзац тексту.
-
-  3. **`<a>`** — посилання (той самий «портал»).
-
-  4. **`<img>`** — додавання картинки (до речі, це один з небагатьох
-  **непарних** тегів, йому не потрібна закривальна частина).
-
 
   ***
 
+  ## Практична діяльність
 
-  **Хочете спробувати самостійно змінити назву вкладки або написати свій перший
-  заголовок?** Можу підказати, як зберегти цей код у звичайному «Блокноті», щоб
-  він відкрився як справжній сайт!
+  Праворуч подано html-файл, оформлений за стандартною структурою.
+
+  Відтворіть цей документ у браузері "пісочниці", натиснувши зелений трикутник (правий верхній кут).
+
+  Внесіть зміни у html-документ щоб він відтворювався браузером за наведеним нижче зразком:
+
+  ![1.00](data:image/png;base64,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DeONN1744osvwvXXXx/69q1ZXa3mCtNnmGGGcNNNN4WFFlook/7tt9+GJ598Mrzyyivh999/D3/++WcYbrjhMnl68s2PP/4YzjrrrADj7qpxcWrZYYcdlDlPM800YaKJJgrgfdhhh/Vk6LzvjkDbIVAXd4VZQyOMMEIGgD59+oSRRhop/Prrr13GqGmQTWCllVbKtM0NEuDNN9+skvVll13WZQytouFuiJh88sl1c+TksMwyy+ivK5o944wzwocffhh+/vnnivntiva8TkfAEWgOgZpqkGaqhYEuuOCCYdxxxw1rrLFG+PjjjyuqQSreYostwqyzzlpxxL/77rs1frXVVgvPP/+8Su1rrbVWOP7447UemDTlllhiiTD88MOrimTzzTfXuK222kqZd9zgjTfeqHkoQ79WWWUVzcs9faAvP/zwQ9h0003DtNNOG2acccZw9tlnaxUPPfRQ2HHHHcPcc88dzjvvPE1nXJwykErjug855JDw8MMPq0qGuin36quvBsbB/UYbbaRqBlQ63JOfUwnqDu7pFycUNibuYaSbbLJJoA+zzz679v3WW2+Nh6Z9NxznmGMO7ScqoauuuirNh3oKhj/xxBOHRRddNDzwwANp2uWXX65tcIKiPDhzUoHisRXhdvvtt1fFhjr++uuvcPDBB4fllltOcV1qqaXCM888Q5ISGz04Lbzwwjo+cObE9sILL6Q4ML7PP/887LbbbooLc2xrhD6DFT8LH3rooVa9Xx2B9kFAGE5NuuaaaxIZcSLMoyKvqEOSkUceOY0XRpDIMTr55ptvki+//FLTFlhggUT0yWkeCwgT0XrJH6cvu+yyGk+7wkiTCy64QO/laK5FyTvOOOMkq6++ulWVrLPOOprnnXfeSePiwAYbbKDp3333nUYfcMABek8foMUWWyw555xztB+HH364pt11113Js88+q+Nh/DvttFMycODAZPnll9d0YWZalrpjDIQJa7owYk2/8sor9f6xxx7L5P/777/1nnap/5JLLtH7888/X++FYen9a6+9pvebbbaZ3uf/GI6ymSRihE2EwWt+2SR1Hujbiy++mPz222/ad+4/+eQT/REW9YfiLKqkdGxvvvmmNlMNt3qw2W677RLmX1RUCeMV24b2jTFBYvdIVl11VQ3TP+bloIMO0nvDgfEx5/Rlzz33TGQDSGSj0HoZB/MC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zqxbYx68F46AI+AIVEXAmXVVeDzREXAEHIHWQMCZdWvMg/fCEXAEHIGqCDizrgqPJzoCjoAj0BoIOLNujXnwXjgCjoAjUBUBZ9ZV4fFER8ARcARaAwFn1q0xD94LR8ARcASqIuDMuio8nugIOAKOQGsg4My6NebBe+EIOAKOQFUEnFlXhccTHQFHwBFoDQScWbfGPHgvHAFHwBGoioAz66rweKIj4Ag4Aq2BgDPr1pgH74Uj4Ag4AlURcGZdFR5PdAQcAUegNRBwZt0a8+C9cAQcAUegKgLOrKvC44mOgCPgCLQGAs6sW2MevBeOgCPgCFRFwJl1VXg80RFwBByB1kCgbz3dePTRR8N1110XjjvuuPDmm2+Gl19+Obz44ovhueeeC1988UUYb7zxwvTTTx/WWmutMMccc9RTZZflue+++8JOO+0Urr/++jDttNOGq666Kpxyyinhv//9b5hgggm6rF2vuDEEbrrppvDGG2+UFmI99e/fP5x11lmleUhgzT3++OPhgw8+qJqvKLFv375ht912CyeccEL4+++/K7IsueSSYbbZZquIjyOeffbZcO+998ZRGqbujTbaKFx44YUVaXHEEkssEWafffY4ysOOQDECSR0kjC+R0ulvookmSvbaa69km222SeMsff/996+jxq7LsvHGGydzzTVX8vnnn2sjjzzySDLyyCMnl1xySdc16jU3jMAtt9ySrLrqqhXrh3W04YYbJrfffnvy448/JocffngyzTTTVORjTvfdd9/kww8/TBZbbLFMOvWyBmxNcmXNrrfeesk444yTiafjRxxxRDLvvPNm4imz9NJL1xyXMPSKcsJ8k8MOOyz5+uuvk0MOOUTbjvtCeIYZZkiOOeaY5KWXXqrZhmdwBEAg1APDpZdemi5IHiQeIiPCPDjxYrzhhhssuduvRx11lPZnzTXXTLbaaqvEHqbnn3++2/viDVZH4I8//qhgnjC6f/75J1Nw4MCBmfXFWpNTXprHmPXKK6+c/Pzzzxp/5plnZsqwiUN//fVXgkBh61Uj5Y+cENM4S+P6+uuvW5aK66uvvlpY5qeffsrkveaaayryvfLKK5k8fuMI1EKgLp31L7/8Ius2BHkYwoABA8JII42k9/whvMoqq6T3BOThytx3580uu+wS1l9//XDnnXeGc889N7zzzjt6nXXWWbuzG95WHQgMM8wwATVATMstt1zo06dPHBUWWmihzD03wqDTOGHuqkq4+uqrwwgjjJDGFwWGHnroIFJvECk7kzz22GOHKaaYIhPHzTnnnFMRZxFnn312EAnZbvUqknsYccQRM3FxXy1hsskms6BfHYG6EKiLWYukoJWdf/75YaihKovMM888mcbkaJq5786b4YcfXvWccgQNb7/9tjLrLbfcsju74G11AIE8o6aqeuLQXQ833HB1t7zBBhsU5sXeEdNJJ50UfvjhhzhKw99//3049dRTA8JBTLEgY/FF/WejcnIEGkGgLgMj0oioF8JYY41VWDfSa0wzzzyz3r7//vtBjopxkoYxHL3wwgvh22+/zaSNPvroQXSHadx3330Xnn766fDEE08EOb6GOeecUw2YGDRjwqgoR+o4Kowyyiha1x133JGJ54byseFIjs7hwQcfDKI/DDB5jFui8wwzzjhjWnbw4MHhtddeS+8JTDXVVGHqqafOxBWNeZZZZgkTTjhhmo/2RJceRDUTeOjnn39+/TF+iFOBHInS/GUB5mO66aYLDz/8cGEWGAJjnXLKKUO/fv0q8nzyyScB4zEGY2immWbSftRjiP3ss8/CaaedpkY0NkWMhcRhYF544YXD+OOPX9FeV0WsttpqYamllmqo+kUWWSTsuuuuFWX+85//BAyL99xzT5p2+eWXh2233Ta9J3DFFVcE0YOHZZddNhPvN45AlyFQS09SK/2jjz7KGFDQX3/88cda7LHHHkvkaJnR12G0ESacnHzyyZl4GWBy4oknajl0lkceeaSmY/hBD0058vDDgBTrzTHiWJpdTz/99OTPP/9MRKrOpNG/yy67LB2WeBKkfUTniUHLdPAYUX/77TfNK8w8EaabqQsjVp5WX331TB6MY7LZpNmeeuqptD0MtMsvv3ya33T9NoZaVzDBkJpvM18Oo5own7QPBC6++OK03T333DMRxpXe12OMffLJJ9P81J+fZ4xn9RBGv7i/BxxwQEUx8dTI5CG/eGFU5IsjynTWcZ58mDGI90Zy6623ZtpjDumDEWHijj/++EQ2vExe6sgThsZ4jITR1zs5Ao0gUJeBMV8hDO68885TQ01sXV9ggQUSkT4z2Xnw44VKWSMs9JYGAza6//7703geOggGHrclLleWXa9Y160ujIpG7777bhpPOgZSo7feeitNg0H/+uuvmnTR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86qAYfm789od7bMhMGbboLpzfN7WEERAHoaqtNhiiyW333675vn9998T6WqywAILpGWOP/74ZN99903vuyNw5ZVXaj/GGWecZKGFFkrWXHPN5LXXXuuOpr2NbkTgjz/+0Lk999xz01aFQSVzzTWXzv8ss8ySLLnkkslxxx2XiKSped58883kwQcfTPN3d6C72h88eLA+hx9//HF3D9HbG0IIIIFUpbPPPjtNL2LWP/zwQyISTpqnqwNPP/10Ms000yTvvPNOVzfl9Q9hBM4666xk+eWXz/Ri1VVXTQ477LDkn3/+ycT3xptTTz01WWuttXrj0HvlmGsy6xiVImYdp99000262yPxrr766slHH32kyYcffniCFMQPSd3Cp512WiJHVr0/+OCDk88//zxZb7319F7UL8nLL78cV6/hHXfcMZGjb7LNNttoW9RHu9ALL7yQ1k36jz/+mCCJIX1xGrjvvvuSFVdcUfPQ7uyzz57IsTWRI7SWl+O1SmmiUtG0TTbZJPnkk080zcaAVHfddddpHFIU/aR+NpBdd901YfP6888/037QBuO167LLLpucd955afo555yjdZX9ef7559M+UwenCKuLsZD+3Xff6Thof4oppkgOOeSQhLmif4RnmGEG3VAZ88gjj6x1UCaum4eesW622WbaN+q+5ppr0rbB4ssvv0z23ntvTQdPTjibb7653l977bWZIdx1110aD3O9/vrrq9Zzyy23ZMpyQ//oq2FNHFIk/Tr55JMT6gVX5k/sFSTreA899FCdC+YAevfdd3V+yGtzTpjy99xzjzI77sH17bff1jL8ER15OjbWGFiBL3k5zVEWQYZ75uOKK64obJ/TASdP1onNH+v8ySefTMtSh9XD9cADD0x22WUXjevfv7+u27RjUYC1zUn38ccfj2L/F6xWP2sCAnfmD0xp56mnnvpf4YK/zP2GG26YsH5Z6xtvvHHy6aefas4bb7xRy/Ns8Pza+mQMtMWYSGONPPPMMykPEFVOcvnll2d4gNgbdIOmDH1jHohj/fFM0zbrDmqV9c2m2Sgf0wE0+KfTmPUDDzygTAFwmVgeNB5oJCB+MHDAh37++Wdl5o899liywQYbaF4YJQTzYgFecsklep//AzOaaKKJlMFS75FHHqn5eVggpDHKx8yDxW8nhPPPP1/TUZvwkDP59BNi0VH2rbfe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)
+
+  Для цього використайте тег елементу заголовка другого рівня та тег абзаца
+
+  ***
+
+  ## Рефлексія
 showEditor: true
 editors:
   - course1/unit1/lesson1/lessonpart5/index.html
+questionGroups:
+  - id: "1"
+    questions:
+      - id: "1"
+        type: choice
+        content: Яка роль тега \<head\> у структурі HTML-документа?
+        options:
+          - id: "1"
+            value: Він містить службову інформацію, таку як заголовок сторінки.
+            explanation: Тег \<head\> зберігає службову інформацію, яка не відображається на
+              сторінці.
+            isCorrect: true
+          - id: "2"
+            value: Він містить основний контент, який бачить користувач.
+            explanation: Основний контент, який бачить користувач, міститься в тегі
+              \<body\>.
+          - id: "3"
+            value: Він визначає мову документа.
+            explanation: Мова документа визначається атрибутом lang у тегі \<html\>.
+  - id: "2"
+    questions:
+      - id: "1"
+        type: choice
+        content: Яка роль тега \<!DOCTYPE html\> у структурі HTML-документа?
+        options:
+          - id: "1"
+            value: Він вказує браузеру, що документ написаний на HTML5.
+            explanation: Цей тег повідомляє браузеру, що використовується сучасна версія
+              HTML5.
+            isCorrect: true
+          - id: "2"
+            value: Він визначає основну мову контенту вебсторінки.
+            explanation: Це завдання атрибуту lang у тегу \<html\>.
+          - id: "3"
+            value: Він зберігає службову інформацію, невидиму на сторінці.
+            explanation: Це функція тега \<head\>.
+  - id: "3"
+    questions:
+      - id: "1"
+        type: choice
+        content: Яка роль тега \<body\> у структурі HTML-документа?
+        options:
+          - id: "1"
+            value: Він містить службову інформацію, яка не відображається на сторінці.
+            explanation: Це роль тега \<head\>.
+          - id: "2"
+            value: Він містить весь контент, який відображається на сторінці.
+            explanation: Тег \<body\> містить текст, зображення та інші елементи, які бачить
+              користувач.
+            isCorrect: true
+          - id: "3"
+            value: Він визначає основну мову контенту вебсторінки.
+            explanation: Це визначається атрибутом lang у тегу \<html\>.
+  - id: "4"
+    questions:
+      - id: "1"
+        type: string
+        content: Впишіть у текстове поле тег, який у назві кладки браузера виведе підпис
+          "Головна"
+        options:
+          - id: "1"
+            value: \<title\>Головна\</title\>
+            isCorrect: true
+  - id: "5"
+    questions:
+      - id: "1"
+        type: choice
+        content: Яка роль тега \<html\> у структурі HTML-документа?
+        options:
+          - id: "1"
+            value: Він є головним контейнером, що містить усі елементи сайту.
+            explanation: Тег \<html\> є головним контейнером для всіх елементів вебсторінки.
+            isCorrect: true
+          - id: "2"
+            value: Він визначає мову контенту вебсторінки.
+            explanation: Атрибут lang всередині \<html\> визначає мову, а не сам тег.
+          - id: "3"
+            value: Він містить видиму частину вебсторінки.
+            explanation: Видима частина вебсторінки міститься в тегу \<body\>.
+  - id: "6"
+    questions:
+      - id: "1"
+        type: choice
+        content: Яке правило вкладеності тегів у HTML-документі?
+        options:
+          - id: "1"
+            value: Ви не можете закрити зовнішню коробку, доки не закрили внутрішню.
+            explanation: Це правило вкладеності, яке забезпечує правильну структуру
+              HTML-документа.
+            isCorrect: true
+          - id: "2"
+            value: Ви можете закрити будь-яку коробку в будь-якому порядку.
+            explanation: Це порушує правило вкладеності, що може призвести до помилок у
+              відображенні.
+          - id: "3"
+            value: Ви повинні закрити всі коробки одночасно.
+            explanation: Це неможливо в HTML, оскільки теги закриваються послідовно.
+  - id: "7"
+    questions:
+      - id: "1"
+        type: multiple
+        content: Яка різниця між парними та одинарними тегами в HTML?
+        options:
+          - id: "1"
+            value: Парні теги мають відкривальний і закривальний елементи, тоді як одинарні
+              теги мають лише один елемент.
+            explanation: Парні теги працюють як контейнери з відкривальним і закривальним
+              елементами, а одинарні теги мають лише один елемент.
+            isCorrect: true
+          - id: "2"
+            value: Одинарні теги завжди містять текст, а парні теги — ні.
+            explanation: Одинарні теги не обов'язково містять текст, вони можуть визначати
+              елементи через атрибути.
+          - id: "3"
+            value: Парні теги використовуються для зображень, а одинарні — для тексту.
+            explanation: Парні теги можуть містити текст або інші елементи, а одинарні теги
+              часто використовуються для зображень.
+          - id: "4"
+            value: Властивості елементів, які визначаються одинарними тегами описують
+              визначаючи значення атрибутів
+            isCorrect: true
+          - id: "5"
+            value: Для додавання на вебсторінку зображення використовують одинарний тег
+              \<img /\>
+            isCorrect: true
